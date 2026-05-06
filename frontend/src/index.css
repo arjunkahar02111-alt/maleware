@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-darkBg: #0b0f19;
+  --color-darkPanel: rgba(30, 41, 59, 0.4);
+  --color-primary: #3b82f6;
+  --color-neonGreen: #39ff14;
+  --color-neonRed: #ff073a;
+  --color-neonBlue: #00f3ff;
+  --color-neonYellow: #ffff00;
+
+  --shadow-glow-green: 0 0 15px rgba(57, 255, 20, 0.5);
+  --shadow-glow-red: 0 0 15px rgba(255, 7, 58, 0.5);
+  --shadow-glow-blue: 0 0 15px rgba(0, 243, 255, 0.5);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@layer base {
+  body {
+    @apply bg-darkBg text-slate-200 antialiased overflow-x-hidden;
+    /* Animated subtle background grid */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: center center;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-darkPanel backdrop-blur-md border border-white/10 shadow-glass rounded-2xl;
+  }
+
+  .neon-text-green {
+    color: var(--color-neonGreen);
+    filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.8));
+  }
+
+  .neon-text-red {
+    color: var(--color-neonRed);
+    filter: drop-shadow(0 0 8px rgba(255, 7, 58, 0.8));
+  }
+
+  .neon-text-blue {
+    color: var(--color-neonBlue);
+    filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.8));
+  }
+
+  /* Scrollbar Customization */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.5);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.8);
+  }
+}
