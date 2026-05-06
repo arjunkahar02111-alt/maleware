@@ -23,7 +23,7 @@ export function Sidebar() {
           <ShieldAlert className="w-8 h-8 text-neonGreen drop-shadow-[0_0_10px_rgba(57,255,20,0.8)]" />
         </div>
         <h1 className="text-xl font-bold tracking-wider bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
-          DEFENDER
+          ArjunXthreat
         </h1>
       </div>
 
