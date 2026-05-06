@@ -27,17 +27,17 @@ export function Dashboard() {
   ];
 
   useEffect(() => {
-    fetch('http://localhost:8000//api/v1/analytics/stats')
+    fetch('https://backend-malware-2ak0.onrender.com/api/v1/analytics/stats')
       .then(res => res.json())
       .then(data => setStats(data))
       .catch(console.error);
 
-    fetch('http://localhost:8000/api/v1/ti/otx/pulses')
+    fetch('https://backend-malware-2ak0.onrender.com/api/v1/ti/otx/pulses')
       .then(res => res.json())
       .then(data => setOtxPulses(Array.isArray(data) ? data : []))
       .catch(console.error);
 
-    fetch('http://localhost:8000/api/v1/ti/abuseipdb/blacklist')
+    fetch('https://backend-malware-2ak0.onrender.com/api/v1/ti/abuseipdb/blacklist')
       .then(res => res.json())
       .then(data => setAbuseIps(Array.isArray(data) ? data : []))
       .catch(console.error);
