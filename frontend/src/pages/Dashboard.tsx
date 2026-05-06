@@ -27,12 +27,12 @@ export function Dashboard() {
   ];
 
   useEffect(() => {
-    fetch('http://103.194.228.215:8000//api/v1/analytics/stats')
+    fetch('http://localhost:8000//api/v1/analytics/stats')
       .then(res => res.json())
       .then(data => setStats(data))
       .catch(console.error);
 
-    fetch('http://103.194.228.215:8000/api/v1/ti/otx/pulses')
+    fetch('http://localhost:8000/api/v1/ti/otx/pulses')
       .then(res => res.json())
       .then(data => setOtxPulses(Array.isArray(data) ? data : []))
       .catch(console.error);
