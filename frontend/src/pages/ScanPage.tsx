@@ -26,7 +26,7 @@ export function ScanPage() {
       formData.append('file', file);
       
       // Call actual backend
-      const response = await fetch('http://localhost:8000/api/v1/scans/scan', {
+      const response = await fetch('https://backend-malware-2ak0.onrender.com/api/v1/scans/scan', {
         method: 'POST',
         body: formData,
       });
